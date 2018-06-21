@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <div class="row">
+        <div class="col">
+            <div class="input_block padding-100">
+                <!-- img src="data:image/png;base64,{{graphic|safe}}" -->
+                <div id="placeholder" style="width:1024px;height:640px;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div style="padding-left: 100px; padding-top: 50px;">
+                <button class="btn btn-primary" onclick="location.href='/'">Return</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        var options = {
+            series: {
+                lines: { show: true },
+                points: { show: true }
+            }
+        };
+        var data = [[
+            {% for position in positions %}
+                 [{{ forloop.counter }}, {{ position }}],
+            {% endfor %}
+        ]];
+
+        $.plot("#placeholder", data);
+    </script>
+{% endblock %}

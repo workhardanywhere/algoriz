@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Trade algorithm</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+              integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+        <script language="javascript" type="text/javascript" src="{% static 'flot/jquery.min.js' %}"></script>
+        <script language="javascript" type="text/javascript" src="{% static 'flot/jquery.flot.js' %}"></script>
+        <style>
+            .padding-100 { padding-top: 100px; }
+            .padding-50 { padding-top: 50px; }
+            .left-100 { margin-left: 100px; }
+            .input_block {
+                margin: auto 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            {% block main %}{% endblock %}
+        </div>
+        {% block scripts %}{% endblock %}
+    </body>
+</html>

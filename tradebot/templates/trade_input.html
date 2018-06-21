@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+    <div class="row padding-100">
+        <div class="col">
+            <div class="input_block">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <input type="submit" value="Apply" />
+                    </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="row padding-50">
+        <div class="col">
+            <div class="left-100">
+                <button class="btn btn-primary" onclick="location.href='/tradebot/algoview/'">Algo table</button>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

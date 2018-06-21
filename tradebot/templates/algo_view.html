@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <div class="row padding-100">
+        <div class="col-md-12">
+            <div class="input_block">
+                <table class="table">
+                    <thead>
+                      <tr>
+                          <th scope="col">Algo Name</th>
+                          <th scope="col">Average PnL</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for algo in algorithms %}
+                            <tr scope="row">
+                                <td><a href="/tradebot/{{ algo.pk }}/plot/">{{ algo.name }}</a></td>
+                                <td>{{ algo.average_PnL }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

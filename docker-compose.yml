@@ -1,0 +1,13 @@
+version: '2'
+services:
+
+   web:
+     build: .
+     ports:
+     - "0.0.0.0:8040:8040"
+     container_name: alrogiz-test
+     volumes:
+     - ./:/opt/myapp
+     working_dir: /opt/myapp
+     entrypoint: tail -f /dev/null
+     #entrypoint: /bin/bash ./init.sh
